@@ -1,0 +1,493 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="Microsoft Word 97">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (WinNT; I) [Netscape]">
+   <meta name="Author" content="Peter Cheung">
+   <title>EE2 Circuits and Systems - Peter Cheung</title>
+<style type="text/css">
+.Ariel {
+    font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body bgcolor="#F0F0F0">
+<font face="Arial, Helvetica, sans-serif">&nbsp;</font>
+<hr>
+<table BORDER="0" CELLSPACING="0" CELLPADDING="5" WIDTH="898" >
+  <tr>
+    <td VALIGN="TOP" WIDTH="95%" HEIGHT="426"><font face="Arial, Helvetica, sans-serif"><img src="./Imperial College Logo.png" alt="" width="237" height="63">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+      <img src="EE2_CAS_banner.jpg" width="840" height="180" alt="">      
+    
+    <p><font face="Arial, Helvetica, sans-serif" color="#000080" size="+1"><strong>Department of Electrical &amp; Electronic Eng.&nbsp;&nbsp;(EEE) &nbsp; BEng &amp; MEng 2nd Year </strong></font><br> <br>  
+	<font color="#000080" size="+2" face="Arial, Helvetica, sans-serif"><strong>ELEC50001 Circuits and Systems (Oct - Dec 2025)</strong></font><br>
+    <font face="Arial, Helvetica, sans-serif" color="#000080"><a href="mailto:p.cheung@imperial.ac.uk">Professor Peter Y. K. Cheung</a></font></p></td>
+</tr>
+</table>
+<hr>
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#008080">Aims &amp; Objectives</font></b> </font></p>
+<p><font face="Arial, Helvetica, sans-serif">This module builds on the first-year modules relating to analogue and digital circuits, computer architecture, and programming, to teach students how to analyse and design electronic circuits with a system level perspective. The aim of this module is to provide students with the theoretical foundations, the design techniques and hands-on experiences of acquiring physical analogue signals, pre-processing them, converting into digital form, then process these in a digital programmable hardware on a Field Programmable Gate Array (FPGA). Unlike last year's module on circuits, year students will learn to process signals that have noise and electronic hardware that are non-ideal.</font></p>
+<font face="Arial, Helvetica, sans-serif">By the end of the course, you should be able to: </font>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif">build working amplifer circuits with real-life op-amps</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">analyse and predict behaviour of active filters</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">explain limitations of op-amp from datasheets</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">analyse the operation of synchronous digital systems </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">synthesize a synchronous digital system to meet a specification </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">determine the worst-case propagation delay of a combinational circuit </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">evaluate the performance of A/D and D/A conversion circuits </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">design arithmetic circuits to meet a specification and determine the propagation delay </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">design of finite state machines</font></li>
+  <li><font face="Arial, Helvetica, sans-serif">design using Verilog HDL</font></li>
+</ul>
+<p><font face="Arial, Helvetica, sans-serif">This course is supported by 6 Laboratory Experiments based a Lab-in-a-Box to enable students to conduct all the experiments in-person and at home.</font></p>
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#008080">RECOMMENDED TEXTBOOKS</font></b></font></p>
+<blockquote>
+  <p><font face="Arial, Helvetica, sans-serif"><a href="https://www.amazon.co.uk/s/ref=nb_sb_ss_c_2_21?url=search-alias%3Dstripbooks&field-keywords=practical+electronics+for+inventors&sprefix=practical+electronics%2Caps%2C130&crid=CENRL57BSNL2">Practical Electronics for Inventors</a> (~&pound;30)<br>
+  </font></p>
+</blockquote>
+<p><font face="Arial, Helvetica, sans-serif"><b><font color="#008080">COURSE SCHEDULE AND CONTENTS</font></b></font></p>
+<table width="850" border="1">
+  <tr>
+    <td width="100"><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif"><strong>Date</strong></font></p>
+    </div></td>
+    <td width="800"><div align="center"><font face="Arial, Helvetica, sans-serif"><strong>Topics</strong></font></div></td>
+    <td width="600"><div align="center"><font face="Arial, Helvetica, sans-serif"><strong>Resources</strong></font></div></td>
+  </tr>
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">7&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 1 - Introduction to Circuits &amp; Systems<br>
+		  	<center><a href="Lectures/Lecture 1 - Introducing to Circuits and Systems (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 1 - Introducing to Circuits and Systems (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d5695c55-3646-4eab-8155-b32f017413aa"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp;<font face="Arial, Helvetica, sans-serif">1st half</font>
+		  </center></font></p>
+		  
+		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 2 - Amplification &amp; Single-Rail Op-amp<br>
+		  	<center><a href="Lectures/Lecture 2 - Amplification & Single rail op-amp (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 2 - Amplification & Single rail op-amp (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d5695c55-3646-4eab-8155-b32f017413aa"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">2nd half</font>
+				</center></font></p><br>
+
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 1&nbsp;&nbsp;<a href="Problems/Problem Sheet 1.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 1 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+			<p align="center"><font face="Arial, Helvetica, sans-serif">MCP601 datasheet&nbsp;&nbsp;<a href="Problems/MCP601.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+        </blockquote>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif"><a href="Planning document - EE2 Circuits & Systems module.pdf">Course Planning Document</a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif"><a href="imperial_ee_ltspice_tutorial.pdf">Year 1 Introduction to LTSPICE</a></font></p>
+          <font face="Arial, Helvetica, sans-serif">Keysight </font><font face="Arial, Helvetica, sans-serif">Scope Documents <br>
+          (<a href="Labs/Keysight_EDUX1002G_Users.pdf">user's manual</a>)</font><br><br>
+          <font face="Arial, Helvetica, sans-serif">Tenma multimeter <a href="Labs/Tenma72-2985_manual.pdf">manual</a></font>
+		  &nbsp;
+    </div></td>
+  </tr>
+
+   <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">13 Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="center"><font face="Arial, Helvetica, sans-serif">Lab 1 - Amplification<br><br>
+		  	<a href="Labs/Lab 1 Amplification.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+        </blockquote>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">LTSPICE&nbsp; hotkeys&nbsp;&nbsp;<a href="Labs/LTspice_hotkeys.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Guidelines on Logbook&nbsp;&nbsp;<a href="Labs/Guidelines on the use of electronic logbook.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">MCP6001/2 data &amp; model&nbsp;&nbsp;<a href="https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;<a href="Labs/MCP6001.txt"><img src="mod_icon.jpg" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">AP431i data &amp; model&nbsp;&nbsp;<a href="https://www.diodes.com/assets/Datasheets/products_inactive_data/AP431i.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;<a href="Labs/AP431i.txt"><img src="mod_icon.jpg" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">PAM8302 datasheet&nbsp;&nbsp;<a href="https://cdn-shop.adafruit.com/datasheets/PAM8302A.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>	
+      <p><font face="Arial, Helvetica, sans-serif">PAM8302 module&nbsp;&nbsp;<a href="Labs/Adafruit PAM8302  schematic.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+		<br>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">14&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 3 - Understanding Op-amp Specifications<br><br>
+		  	<center><a href="Lectures/Lecture 3 - Op-Amp Specifications (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 3 - Op-Amp Specifications (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=74c99ad3-31a2-48ae-9026-b32f01741467"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp;<font face="Arial, Helvetica, sans-serif">1st half</font>
+		    </center></font></p>
+		  
+		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 4 - Understanding Op-amp Models<br><br>
+		  	<center><a href="Lectures/Lecture 4 - Op-Amp Models (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 4 - Op-Amp Models (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=74c99ad3-31a2-48ae-9026-b32f01741467"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">2nd half</font>
+			</center></font></p>
+        </blockquote>
+    </div></td>
+    <td><div align="center">
+
+      <p><font face="Arial, Helvetica, sans-serif">LTspice essential tutorials&nbsp;&nbsp;<a href="https://www.youtube.com/watch?v=kJDahaWfobw&list=PLiwaj4qabLWwybOifEzcIyA2lYjAMGkpp"><img src="video_icon.png" width="35" height="35" alt=""></a></font></p>		
+      <p><font face="Arial, Helvetica, sans-serif">LTspice wiki&nbsp;&nbsp;<a href="https://ltwiki.org/index.php?title=SPICE_and_LTspice_Courseware_and_Tutorials"><img src="weblink_icon.png" width="35" height="35" alt=""></a></font></p>		
+      </div></td>
+  </tr>
+
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">20&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="center"><font face="Arial, Helvetica, sans-serif">Lab 2- Op-amp Applications&nbsp;<br><br>
+		  	<a href="Labs/Lab 2 Op-amp Applications.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+        </blockquote>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Microphone datasheet&nbsp; &nbsp;&nbsp;<a href="Labs/mic.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">IN5817 schottky diode data&nbsp; &nbsp;&nbsp;<a href="Labs/1n5817.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p><br>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">21&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 5 - Op-amp Applications<br><br>
+		  	<center><a href="Lectures/Lecture 5 - Op-Amp Applications (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 5 - Op-Amp Applications (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1b65dee7-8f35-4435-8122-b32f01741547#"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; 1st half<font face="Arial, Helvetica, sans-serif"></font>
+		    </center></font></p>
+		  
+		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 6 - Active Filters<br><br>
+		  	<center><a href="Lectures/Lecture 6 - Active Filters (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 6 - Active Filters (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1b65dee7-8f35-4435-8122-b32f01741547#"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; 2nd half <font face="Arial, Helvetica, sans-serif"></font>
+			</center></font></p>
+		  
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 2&nbsp;&nbsp;<a href="Problems/Problem Sheet 2.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 2 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+		  
+        </blockquote>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">TI's Op-amp Cookbook&nbsp;&nbsp;<a href="https://www.mouser.com/pdfDocs/analogengineer’scircuitcookbookopamps.pdf?srsltid=AfmBOoq0R1IBmD3tnmP_Dcv3sXWNgazCgw9bqvGtuoWpm2iknglKK26L"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Understand Op-amp Specifications&nbsp;&nbsp;<a href="https://www.ti.com/lit/an/sloa011b/sloa011b.pdf?ts=1728677115250"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Analog Devices Electronics wiki&nbsp;&nbsp;<a href="https://wiki.analog.com/university/courses/electronics"><img src="weblink_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Analog Devices Op-Amp Applications&nbsp;&nbsp;<a href="https://www.analog.com/en/education/education-library/op-amp-applications-handbook.html"><img src="weblink_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Analog Pocket Reference Guide&nbsp;&nbsp;<a href="https://www.ti.com/amplifier-circuit/analog-engineers-pocket-reference-guide.html"><img src="weblink_icon.png" width="35" height="35" alt=""></a></font></p>
+      </div></td>
+  </tr>
+
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">27&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="center"><font face="Arial, Helvetica, sans-serif">For those who finished Lab 2 early:<br><br>Lab 3 - Introducing DE10-Lite<br>&nbsp;<br><br>
+		  	<a href="Labs/Lab 3 - Introducing DE10-Lite.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+        </blockquote>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Lab 3 Task 1 solution (zipped)&nbsp; &nbsp;&nbsp;<a href="Labs/lab3task1_sol.sof.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Pin Assignment File&nbsp; &nbsp;&nbsp;<a href="Labs/pin_assignment.txt"><img src="text_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Updated USB Blaster Driver&nbsp; &nbsp;&nbsp;<a href="Labs/updated USB-Blaster Driver.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Intel Quartus Prime Lite Download&nbsp;&nbsp;<a href="https://www.intel.com/content/www/us/en/software-kit/660907/intel-quartus-prime-lite-edition-design-software-version-20-1-1-for-windows.html"><img src="weblink_icon.png" width="35" height="35" alt=""></a></font></p><br>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">28&nbsp; Oct<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote>
+		  <br><p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 7 - Digital Designing with FPGA<br>
+		  	<center><a href="Lectures/Lecture 7 - Digital Designing with FPGA (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 7 - Digital Designing with FPGA (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=53707302-9e7f-4b82-abc7-b32f0174161a"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp;1st half<font face="Arial, Helvetica, sans-serif"></font>
+		    </center></font></p>
+		  <br><p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 8 - SystemVerilog HDL<br>
+		  	<center><a href="Lectures/Lecture 8 - SystemVerilog HDL (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 8 - SystemVerilog HDL (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=53707302-9e7f-4b82-abc7-b32f0174161a"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">2nd half</font>
+			</center></font></p>
+
+	</blockquote>
+		  </div></td>
+	
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">Altera FPGA Support Resources&nbsp;&nbsp;<a href="https://www.intel.com/content/www/us/en/support/programmable/support-resources/overview.html"><img src="weblink_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">MAX10 Device Architectures&nbsp;&nbsp;<a href="Labs/m10_architecture.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">DE10-Lite Resource Centre&nbsp;&nbsp;<a href="https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021"><img src="weblink_icon.png" width="35" height="35" alt=""></a></font></p>
+      </div></td>
+  </tr>
+
+<tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">3-4 Nov
+        </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Mid-term Lab Oral - Guidelines and Schedule&nbsp;&nbsp;<a href="Labs/Mid-term Lab Oral Assessment Information to students.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p><br>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">Lab Oral Schedule&nbsp;&nbsp;<a href="Labs/EE2 CAS mid-term Lab Oral schedule.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Lab Oral Marksheet&nbsp;&nbsp;<a href="Labs/Mid-term Lab Oral marksheet.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>		
+		</div><br>
+	</td>
+  </tr>
+
+<tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">10 Nov
+        </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Lab 4 - Sequential Circuits&nbsp;&nbsp;<a href="Labs/Lab 4 - Sequential circuits.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p><br>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">Lab4 Task1 solution (zipped)&nbsp;&nbsp;<a href="Labs/lab4task1_sol.sof.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Lab4 Task2 solution (zipped)&nbsp;&nbsp;<a href="Labs/lab4task2_sol.sof.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Lab4 Task3 solution (zipped)&nbsp;&nbsp;<a href="Labs/lab4task3_sol.sof.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">bin2bcd_16.sv&nbsp;&nbsp;<a href="Labs/bin2bcd_16.sv.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">clktick.sv&nbsp;&nbsp;<a href="Labs/clktick.sv.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Updated USB Blaster Driver&nbsp; &nbsp;&nbsp;<a href="Labs/updated USB-Blaster Driver.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a></font></p>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">11&nbsp; Nov<br>
+      </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <blockquote>
+ 		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 9 - Counters and Shift Registers<br>
+		  	<center><a href="Lectures/Lecture 9 - Counter & Shift Registers (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 9 - Counter & Shift Registers (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=971cd1c5-5a63-4765-9e7a-b32f017416f8"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif"></font>
+			</center></font></p><br>
+		  
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 3&nbsp;&nbsp;<a href="Problems/Problem Sheet 3.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 3 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+	</blockquote>
+		  </div></td>
+	
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">SystemVerilog Cheatsheet&nbsp;&nbsp;<a href="https://courses.cs.washington.edu/courses/cse369/24sp/verilog/Verilog_Ref_Sheet.pdf"><img src="weblink_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      </div></td>
+  </tr>
+
+<tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">17 Nov
+        </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Lab 5 - DAC and Function Generator&nbsp;&nbsp;<a href="Labs/Lab 5 - DAC and Function Generator.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p><br>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">pwm.sv &amp; spi2dac.sv&nbsp;&nbsp;<a href="Labs/lab5.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">MCP4921 datasheet&nbsp;&nbsp;<a href="Labs/MCP4921.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Lab5 solutions&nbsp;&nbsp;<a href="Labs/lab5_solutions.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+    </div></td>
+  </tr>
+	
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">18&nbsp; Nov<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote> <br>
+		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 10 - Digital to Analogue Conversion<br><br>
+		  	<center><a href="Lectures/Lecture 10 - Digital-to-Analogue Conversion (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 10 - Digital-to-Analogue Conversion (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d8fb4043-f1e0-4cac-b259-b32f017417bd"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;1st half</font>
+			</center></font></p>
+		  
+		    <p align="left"><font face="Arial, Helvetica, sans-serif">Lecture 11 - Finite State Machines<br><br>
+		  	<center><a href="Lectures/Lecture 11 - FSMs (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 11 - FSMs (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d8fb4043-f1e0-4cac-b259-b32f017417bd"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;2nd half</font>
+			</center></font></p>
+		  
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 4&nbsp;&nbsp;<a href="Problems/Problem Sheet 4.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 4 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+	</blockquote>
+		  </div></td>
+	
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">Data Converter Handbook&nbsp;&nbsp;<a href="Lectures/analog_digital_conversion.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      </div></td>
+  </tr>
+
+<tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">24 Nov
+        </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Lab 6 - ADC and echo synthesizer&nbsp;&nbsp;<a href="Labs/Lab 6 - ADC and echo synthesizer.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+    </div></td>
+    <td><div align="center">
+      <p><font face="Arial, Helvetica, sans-serif">Lab 6 codes to download&nbsp;&nbsp;<a href="Labs/lab6.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">MCP3201 ADC datasheet&nbsp;&nbsp;<a href="Labs/MCP3201 ADC.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Lab 6 solutions&nbsp;&nbsp;<a href="Labs/lab6_solutions.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">Audio files:&nbsp;&nbsp;<a href="Labs/clapping.mp3">clapping.mp3</a>, &nbsp; <a href="Labs/hello.mp3">hello.mp3</a>, &nbsp;
+		<a href="Labs/hg2g.mp3">hg2g.mp3</a> ,&nbsp; <a href="Labs/hg2g_5min.mp3">hg2g(short).mp3</a>
+		  </font></p><br>
+
+		</div></td>
+  </tr>
+	
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">25&nbsp; Nov<br>
+      </font></p>
+    </div></td>
+    <td><div align="center">
+      <blockquote><br>
+		    <p align="center"><font face="Arial, Helvetica, sans-serif">Lecture 12 - A-to-D Conversion <br><br>
+		  	<a href="Lectures/Lecture 12 - Analogue-to-Digital Conversion (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 12 - Analogue-to-Digital Conversion (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=84f79656-12bb-48d5-8b42-b32f017418b0"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">1st half</font>
+			</font></p>
+		    <p align="center"><font face="Arial, Helvetica, sans-serif">Lecture 13 - Lab 6 &amp; Challenges explained<br>
+		  	<center><a href="Lectures/Lecture 13 - Echo synthesizer Lab 6 explained (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 13 - Echo synthesizer Lab 6 explained (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=84f79656-12bb-48d5-8b42-b32f017418b0"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">2nd half</font>
+			</center></font></p>
+      <p><font face="Arial, Helvetica, sans-serif">The Challenges&nbsp;&nbsp;<a href="Labs/The Challenges.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p>
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 5&nbsp;&nbsp;<a href="Problems/Problem Sheet 5.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 5 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+
+	</blockquote>
+		  </div></td>
+	
+    <td>
+	     <p align="center"><font face="Arial, Helvetica, sans-serif">
+		Sinewave Generator in Matlab&nbsp;&nbsp;<a href="Labs/sinegen.m.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a><br><br>
+		Rom data file  &nbsp;&nbsp;<a href="Labs/rom_data.mif.zip"><img src="zip_icon.png" width="35" height="35" alt=""></a></font></p>
+	</td>
+  </tr>
+		
+  <tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">2&nbsp; Dec<br>
+      </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <blockquote>
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Lecture 14 - Timing Constraints <br>
+		  	<center><a href="Lectures/Lecture 14 - Timing Constraints (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 14 - Timing Constraints (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=84720f67-bb62-461a-a0b6-b32f017419a6  "><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">1st half</font>
+			</center></font></p>
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Lecture 15 - memories <br>
+		  	<center><a href="Lectures/Lecture 15 - memories (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 15 - memories (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="https://imperial.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=84720f67-bb62-461a-a0b6-b32f017419a6"><img src="tape_icon.jpg" width="40" height="35" alt=""></a>&nbsp;&nbsp; <font face="Arial, Helvetica, sans-serif">2nd half</font>
+			</center></font></p>
+		  
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 6&nbsp;&nbsp;<a href="Problems/Problem Sheet 6.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 6 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+
+	      <p align="center"><font face="Arial, Helvetica, sans-serif">Problem Sheet 7&nbsp;&nbsp;<a href="Problems/Problem Sheet 7.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;(solutions)
+		  <a href="Problems/Problem Sheet 7 solutions.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a></font></p>
+	</blockquote>
+		  </div></td>
+	
+    <td>
+		    <p align="center"><font face="Arial, Helvetica, sans-serif">Bonus Lecture 
+				<br>SPI to DAC module explained<br>
+		  	<center><a href="Lectures/Lecture 16 - SPI  to DAC module (slides).pdf"><img src="slides_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			<a href="Lectures/Lecture 16 - SPI  to DAC module (notes).pdf"><img src="notes_icon.jpg" width="35" height="35" alt=""></a>&nbsp;&nbsp;
+			</center></font></p>
+	</td>
+  </tr>
+<tr>
+    <td><div align="left">
+        <p align="center"><font face="Arial, Helvetica, sans-serif">9 -10 Dec
+        </font></p>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">End-of-Term Lab Oral - Guidelines and Schedule&nbsp;&nbsp;<a href="Labs/End-of-term Lab Oral Assessment - Information to students.pdf"><img src="pdf_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p><br>
+    </div></td>
+    <td><div align="center"><br>
+      <p><font face="Arial, Helvetica, sans-serif">Module Evaluation Survey&nbsp;&nbsp;<a href="https://forms.cloud.microsoft/e/BPVn8UXtR9"><img src="survey_icon.png" width="35" height="35" alt=""></a>&nbsp;&nbsp;</font></p><br>
+    </div>
+	</td>
+  </tr>
+
+</table>
+
+
+<p><b><font face="Arial, Helvetica, sans-serif" color="#008080">LECTURE NOTES&nbsp; </font></b></p>
+	<blockquote>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 1 - Introduction to circuits &amp; systems (<a href="Lectures/Lecture 1 - Introducing to Circuits and Systems (notes).pdf">notes</a>) </font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 2 - Amplification and Single-Rail Op-amp (<a href="Lectures/Lecture 2 - Amplification & Single rail op-amp (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 3 - Understanding Op-amp Specification (<a href="Lectures/Lecture 3 - Op-Amp Specifications (notes).pdf">notes</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 4 - Understanding Op-amp Models (<a href="Lectures/Lecture 4 - Op-Amp Models (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 5 - Op-amp Applications (<a href="Lectures/Lecture 5 - Op-Amp Applications (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 6 - Active Filters (<a href="Lectures/Lecture 6 - Active Filters (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 7 - Digital Design with FPGAs (<a href="Lectures/Lecture 7 - Digital Designing with FPGA (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 8 - SystemVerilog HDL (<a href="Lectures/Lecture 8 - SystemVerilog HDL (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 9 - Counters and Shift Registers (<a href="Lectures/Lecture 9 - Counter & Shift Registers (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 10 - DAC Conversion (<a href="Lectures/Lecture 10 - Digital-to-Analogue Conversion (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 11 - Finite State Machines (<a href="Lectures/Lecture 11 - FSMs (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 12 - Analogue-to-Digital Conversion (<a href="Lectures/Lecture 12 - Analogue-to-Digital Conversion (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 13 - Lab 6 &amp; Challenges Explained  (<a href="Lectures/Lecture 13 - Echo synthesizer Lab 6 explained (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 14 - Timing Constraints (<a href="Lectures/Lecture 14 - Timing Constraints (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 15 - memories (<a href="Lectures/Lecture 15 - memories (notes).pdf">notes</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">Lecture 16 - spi2dac explained (<a href="Lectures/Lecture 16 - SPI  to DAC module.pdf">notes</a>)</font></li>
+	</blockquote>
+
+<p><b><font face="Arial, Helvetica, sans-serif" color="#008080"> LAB INSTRUCTIONS </font></b></p>
+<blockquote>
+ 	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 1 Amplification.pdf">Lab 1</a>- Amplification &amp; Single-rail Op-Amp</font></li>
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 2 Op-amp Applications.pdf">Lab 2</a> - Op-amp Applications</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 3 - Introducing DE10-Lite.pdf">Lab 3</a> - Introduction to Quartus &amp; DE10-Lite</font></li>
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 4 - Sequential circuits.pdf"> Lab 4</a> - Sequential Circuits</font></li>
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 5 - DAC and Function Generator.pdf">Lab 5</a> - DAC and Function Generator</font></li>
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/Lab 6 - ADC and echo synthesizer.pdf">Lab 6</a> - ADC &amp; Echo Synthesizer</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif"><a href="Labs/The Challenges.pdf">Challenges</a></font></li>
+</blockquote>
+	
+<p><b><font face="Arial, Helvetica, sans-serif" color="#008080"> PROBLEM SHEETS </font></b></p>
+	<blockquote>
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 1.pdf">Problem Sheet 1</a> (<a href="Problems/Problem Sheet 1 solutions.pdf">solutions</a>)</font></li>
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 2.pdf">Problem Sheet 2</a> (<a href="Problems/Problem Sheet 2 solutions.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 3.pdf">Problem Sheet 3</a> (<a href="Problems/Problem Sheet 3 solutions.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 4.pdf">Problem Sheet 4</a> (<a href="Problems/Problem Sheet 4 solutions.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 5.pdf">Problem Sheet 5</a> (<a href="Problems/Problem Sheet 5 solutions.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 6.pdf">Problem Sheet 6</a> (<a href="Problems/Problem Sheet 6 solutions.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Problems/Problem Sheet 7.pdf">Problem Sheet 7</a> (<a href="Problems/Problem Sheet 7 solutions.pdf">solutions</a>)</font></li>	
+</blockquote>
+
+<p><b><font face="Arial, Helvetica, sans-serif" color="#008080"> Past Examination Papers<br> </font></b></p>
+	<blockquote>		
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Exams/ELEC50001 Exam 2022.pdf"> Exam Paper 2022</a> (<a href="Exams/ELEC50001 Solutions 2022.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Exams/ELEC50001 Exam 2023.pdf"> Exam Paper 2023</a> (<a href="Exams/ELEC50001 Solutions 2023.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Exams/ELEC50001 Exam 2024.pdf"> Exam Paper 2024</a> (<a href="Exams/ELEC50001 Solutions 2024.pdf">solutions</a>)</font></li>	
+	<li><font face="Arial, Helvetica, sans-serif">  <a href="Exams/ELEC50001 Exam 2025.pdf"> Exam Paper 2025</a> (<a href="Exams/ELEC50001 Solutions 2025.pdf">solutions</a>)</font></li>	
+</blockquote>		
+
+<hr>
+<font size="-1" face="Arial, Helvetica, sans-serif"><i>This page is maintained by <a href="mailto:p.cheung@imperial.ac.uk">Peter Cheung</a></i>
+<br>
+<i>Last updated&nbsp; &nbsp;25 March 2026</i></font>
+</body>
+</html>
